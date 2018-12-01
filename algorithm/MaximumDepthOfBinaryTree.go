@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package algorithm
 
 /**
 MaximumDepthOfBinaryTree
@@ -24,11 +22,7 @@ return its depth = 3.
 */
 
 //Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+
 
 func maxDepth(root *TreeNode) int {
 	if root != nil {
@@ -42,23 +36,4 @@ func maxDepth(root *TreeNode) int {
 	return 0
 }
 
-func main() {
-	// create a test tree
-	var treeIs = `
-		 3
-	   / \
-	  9    20
-	     /   \
-	    15     7
-    `
-	root := TreeNode{
-		3,
-		&TreeNode{9, nil, nil},
-		&TreeNode{20,
-			&TreeNode{15, nil, nil},
-			&TreeNode{7, nil, nil}}}
-	depth := maxDepth(&root)
-	fmt.Println("the tree shape is ")
-	fmt.Println(treeIs)
-	fmt.Printf(" and tree depth is %d ", depth)
-}
+
