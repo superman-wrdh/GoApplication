@@ -1,4 +1,4 @@
-package main
+package algorithm
 
 import "fmt"
 
@@ -6,17 +6,7 @@ import "fmt"
 *
  * 题目：从上往下打印出二叉树的每个节点，同层节点从左至右打印
  * 广度优先层次遍历，
- */
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func main() {
-	tree := CreateTree()
-	PrintBF(&tree)
-}
+*/
 
 func PrintBF(root *TreeNode) {
 	if root != nil {
@@ -49,4 +39,10 @@ func CreateTree() TreeNode {
 			&TreeNode{15, nil, nil},
 			&TreeNode{7, nil, nil}}}
 	return root
+}
+
+func TestCaseBf() {
+	tree := CreateTree()
+	PrintBF(&tree)
+
 }

@@ -1,12 +1,13 @@
 package main
 
-import "fmt"
+import "GoApplication/algorithm"
 
 func main() {
 	//algorithm.T1()
 	//algorithm.T2()
-	input := []int{7, 6, 4, 3, 1}
-	fmt.Println(maxProfit(input))
+	//input := []int{7, 6, 4, 3, 1}
+	//fmt.Println(maxProfit(input))
+	algorithm.TestCaseBf()
 }
 
 func climbStairs(n int) int {
