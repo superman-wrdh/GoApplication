@@ -8,19 +8,46 @@ import "fmt"
  * 广度优先层次遍历，或者 层次遍历
 */
 // 前序遍历
-func PrintBF(root *TreeNode) {
+func PreOrder(root *TreeNode) {
 	if root != nil {
 		fmt.Printf(" %v ", root.Val)
 	}
 	if root.Left != nil {
-		PrintBF(root.Left)
+		PreOrder(root.Left)
 		//nodeList = append(nodeList, node.Left)
 	}
 	if root.Right != nil {
-		PrintBF(root.Right)
+		PreOrder(root.Right)
 		//nodeList = append(nodeList, node.Right)
 	}
 
+}
+
+//中序遍历
+func InOrder(root *TreeNode) {
+	if root.Left != nil {
+		InOrder(root.Left)
+	}
+
+	if root != nil {
+		fmt.Print(root.Val, " ")
+	}
+
+	if root.Right != nil {
+		InOrder(root.Right)
+	}
+
+}
+
+// 后序遍历
+func PostOrder(root *TreeNode) {
+	if root.Left != nil {
+		PostOrder(root.Left)
+	}
+	if root.Right != nil {
+		PostOrder(root.Right)
+	}
+	fmt.Print(root.Val, " ")
 }
 
 func CreateTree() TreeNode {
@@ -42,16 +69,20 @@ func CreateTree() TreeNode {
 }
 func CreateTree2() TreeNode {
 	var treeIs = `
-		 3
-	   / \
-	  9    20
+		   1
 	     /   \
-	    15     7
+	   3       2
+      / \     /  \
+	 7   6   5   4
+    /
+   0
     `
 	fmt.Println("create a tree like\n", treeIs)
 	root := TreeNode{
 		1,
-		&TreeNode{3, &TreeNode{7, &TreeNode{0, nil, nil}, nil},
+		&TreeNode{3, &TreeNode{7,
+			&TreeNode{0, nil,
+				nil}, nil},
 			&TreeNode{6, nil, nil}},
 		&TreeNode{2,
 			&TreeNode{5, nil, nil},
@@ -59,9 +90,21 @@ func CreateTree2() TreeNode {
 	return root
 }
 
-func TestCaseBf() {
+func TestCaseInorder() {
 	//tree := CreateTree()
 	tree := CreateTree2()
-	PrintBF(&tree)
+	fmt.Println("前序遍历")
+	PreOrder(&tree)
+}
 
+func TestCasePreOrder() {
+	tree := CreateTree2()
+	fmt.Println("中序遍历")
+	InOrder(&tree)
+}
+
+func TestCasePostOrder() {
+	tree := CreateTree2()
+	fmt.Println("后序遍历")
+	PostOrder(&tree)
 }

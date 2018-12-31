@@ -7,7 +7,9 @@ func main() {
 	//algorithm.T2()
 	//input := []int{7, 6, 4, 3, 1}
 	//fmt.Println(maxProfit(input))
-	algorithm.TestCaseBf()
+	algorithm.TestCasePreOrder()
+	algorithm.TestCaseInorder()
+	algorithm.TestCasePostOrder()
 }
 
 func climbStairs(n int) int {
