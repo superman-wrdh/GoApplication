@@ -1,4 +1,4 @@
-package go_interface
+package main
 
 import "fmt"
 
