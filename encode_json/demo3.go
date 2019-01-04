@@ -27,4 +27,6 @@ func main() {
 		}
 		fmt.Printf("\n")
 	}
+
+	json.Marshal()
 }
