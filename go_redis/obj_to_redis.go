@@ -35,6 +35,7 @@ func GetClient() *redis.Client {
 	// Output: PONG <nil>
 }
 
+//方式1
 func StructToByte() {
 	var u = &User{"hc", 22}
 	fmt.Println("原始数据为 ", u)
@@ -68,6 +69,9 @@ func ByteToStruct() {
 
 }
 
+//方式1 over
+
+//方式2
 func ObjToRedisByGob() {
 	var u = &User{"hc", 22}
 	fmt.Println("原始数据为 ", u)
@@ -96,6 +100,8 @@ func RedisToObjByGob() {
 	dec.Decode(&u)
 	fmt.Println(u)
 }
+
+//方式2 over
 
 /**
 使用redis缓存复杂结构数据
