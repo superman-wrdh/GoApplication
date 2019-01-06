@@ -68,6 +68,14 @@ func ByteToStruct() {
 
 /**
 使用redis缓存复杂结构数据
+运行打印输出
+
+原始数据为  { name:hc,age:22}
+序列化成 byte 结果为 :  [148 1 98 0 0 0 0 0 2 0 0 0 0 0 0 0 22 0 0 0 0 0 0 0]
+存储到redis成功
+获取redis数据成功
+反序列化数据为 { name:hc,age:22} :
+
 */
 func main() {
 	//对象序列化成byte 存储到redis
