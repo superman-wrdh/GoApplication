@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/go-redis/redis"
 	"fmt"
+	"github.com/go-redis/redis"
 )
 
 func InitClient() *redis.Client {
 	client := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
+		Addr:     "192.168.199.199:6379",
 		Password: "", // no password set
 		DB:       0,  // use default DB
 	})
@@ -18,7 +18,7 @@ func InitClient() *redis.Client {
 	// Output: PONG <nil>
 }
 
-func ExampleClient() {
+func TestClient() {
 	client := InitClient()
 	//key string, value interface{}
 	err := client.Set("key", "value", 0).Err()
@@ -42,4 +42,8 @@ func ExampleClient() {
 	}
 	// Output: key value
 	// key2 does not exist
+}
+
+func main() {
+	TestClient()
 }
