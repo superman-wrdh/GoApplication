@@ -33,6 +33,7 @@ func main() {
 		log.Fatal("encode error:", err)
 	}
 	err = enc.Encode(P{1782, 1841, 1922, "Treehouse"})
+	print(network.Bytes())
 	if err != nil {
 		log.Fatal("encode error:", err)
 	}
