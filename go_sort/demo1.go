@@ -45,6 +45,13 @@ func main() {
 	sort.Slice(people, func(i, j int) bool {
 		return people[i].Age > people[j].Age
 	})
+
+	/**
+	var a = func(i, j int) bool {
+		return people[i].Age > people[j].Age
+	}
+	sort.Slice(people, a)
+	*/
 	fmt.Println(people)
 
 }
