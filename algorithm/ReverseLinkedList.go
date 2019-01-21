@@ -16,6 +16,8 @@ Output: 5->4->3->2->1->NULL
 Follow up:
 
 A linked list can be reversed either iteratively or recursively. Could you implement both?
+
+https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
 */
 
 func reverseList(head *ListNode) *ListNode {
