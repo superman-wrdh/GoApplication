@@ -1,15 +1,19 @@
 package main
 
-import "GoApplication/algorithm"
+import (
+	"GoApplication/algorithm"
+	"fmt"
+)
 
 func main() {
 	//algorithm.T1()
 	//algorithm.T2()
 	//input := []int{7, 6, 4, 3, 1}
 	//fmt.Println(maxProfit(input))
-	algorithm.TestCasePreOrder()
-	algorithm.TestCaseInorder()
-	algorithm.TestCasePostOrder()
+	//algorithm.TestCasePreOrder()
+	//algorithm.TestCaseInorder()
+	//algorithm.TestCasePostOrder()
+	fmt.Println(algorithm.IsPowerOfThree(27))
 }
 
 func climbStairs(n int) int {
