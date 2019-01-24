@@ -13,7 +13,7 @@ func main() {
 	//algorithm.TestCasePreOrder()
 	//algorithm.TestCaseInorder()
 	//algorithm.TestCasePostOrder()
-	fmt.Println(algorithm.IsPowerOfThree(27))
+	fmt.Print(algorithm.TypeMaxOfPowerOfTree())
 }
 
 func climbStairs(n int) int {
