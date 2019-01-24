@@ -8,7 +8,7 @@ func isPowerOfThree(n int) bool {
 	if n <= 0 {
 		return false
 	} else {
-		return 1162261467 % n == 0
+		return 1162261467%n == 0
 	}
 }
 
