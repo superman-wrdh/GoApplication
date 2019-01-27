@@ -21,16 +21,43 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 */
 
 // 方法一 暴力搜索 可以解决 时间超时
-func solve(idx int, nums []int) int {
+//*****************************************
+//func solve(idx int, nums []int) int {
+//	if idx < 0 {
+//		return 0
+//	}
+//	maxNum := Max(nums[idx]+solve(idx-2, nums), solve(idx-1, nums))
+//	return maxNum
+//}
+//
+//func rob(nums []int) int {
+//	return solve(len(nums)-1, nums)
+//}
+//
+//func Max(x, y int) int {
+//	if x < y {
+//		return y
+//	}
+//	return x
+//}
+//******************************************
+
+// 方法二 在方法一基础上加入缓存 耗时 0 ms
+func solve(idx int, nums []int, resultCache map[int]int) int {
+	if _, ok := resultCache[idx]; ok {
+		return resultCache[idx]
+	}
 	if idx < 0 {
 		return 0
 	}
-	maxNum := Max(nums[idx]+solve(idx-2, nums), solve(idx-1, nums))
+	maxNum := Max(nums[idx]+solve(idx-2, nums, resultCache), solve(idx-1, nums, resultCache))
+	resultCache[idx] = maxNum
 	return maxNum
 }
 
 func rob(nums []int) int {
-	return solve(len(nums)-1, nums)
+	var resultCache = make(map[int]int)
+	return solve(len(nums)-1, nums, resultCache)
 }
 
 func Max(x, y int) int {
