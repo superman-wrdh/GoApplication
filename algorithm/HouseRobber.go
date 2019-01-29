@@ -20,7 +20,7 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
 */
 
-// 方法一 暴力搜索 可以解决 时间超时
+// 方法一 暴力搜索 可以解决 时间超时(重复计算)
 //*****************************************
 //func solve(idx int, nums []int) int {
 //	if idx < 0 {
