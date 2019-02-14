@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 type Person struct {
 	name string
 	age  int
@@ -13,5 +18,12 @@ type Teacher struct {
 }
 
 func main() {
-	teacher := Teacher{}
+	//teacher := Teacher{Person{"22", 22, "22"}, 212}
+	//teacher2 := Teacher{Person{"22", 22, "22"}, 212}
+	//fmt.Print(teacher == teacher2)
+	var whatever [5]struct{}
+	for i := range whatever {
+		go func() { fmt.Println(i) }()
+	}
+	time.Sleep(time.Second)
 }
