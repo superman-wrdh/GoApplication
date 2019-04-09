@@ -6,32 +6,34 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"log"
 	"net/http"
-	"strings"
 	"time"
 )
 
 func main() {
 
-	root := flag.String("p", "", "file server root directory")
+	port := flag.String("port", "9090", "file server port")
 	flag.Parse()
-
-	if len(*root) == 0 {
-		log.Fatalln("file server root directory not set")
-	}
-
-	if !strings.HasPrefix(*root, "/") {
-		log.Fatalln("file server root directory not begin with '/'")
-	}
-
-	if !strings.HasSuffix(*root, "/") {
-		log.Fatalln("file server root directory not end with '/'")
-	}
-
-	p, h := NewFileHandle(*root)
+	//
+	//if len(*root) == 0 {
+	//	log.Fatalln("file server root directory not set")
+	//}
+	//
+	//if !strings.HasPrefix(*root, "/") {
+	//	log.Fatalln("file server root directory not begin with '/'")
+	//}
+	//
+	//if !strings.HasSuffix(*root, "/") {
+	//	log.Fatalln("file server root directory not end with '/'")
+	//}
+	root := "/"
+	p, h := NewFileHandle(root)
 	r := httprouter.New()
 	r.GET(p, LogHandle(h))
 
-	log.Fatalln(http.ListenAndServe(":9090", r))
+	addr := ":" + string(*port)
+
+	print("start listen ", addr)
+	log.Fatalln(http.ListenAndServe(addr, r))
 }
 
 func NewFileHandle(path string) (string, httprouter.Handle) {
