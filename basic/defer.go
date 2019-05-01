@@ -1,9 +1,9 @@
 package main
 
 import (
-	"time"
-	"runtime"
 	"fmt"
+	"runtime"
+	"time"
 )
 
 func main() {
