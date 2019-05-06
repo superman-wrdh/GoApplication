@@ -28,6 +28,7 @@ func main() {
 func NewFileHandle(path string) (string, httprouter.Handle) {
 	return fmt.Sprintf("%s*files", path),
 		func(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+			//当前目录
 			http.StripPrefix(path, http.FileServer(http.Dir("./"))).ServeHTTP(w, r)
 		}
 }
