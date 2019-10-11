@@ -24,7 +24,8 @@ func (u *User) String() string {
 }
 func GetClient() *redis.Client {
 	client := redis.NewClient(&redis.Options{
-		Addr:     "192.168.199.199:6379",
+		//Addr:     "192.168.199.199:6379",
+		Addr:     "127.0.0.1:6379",
 		Password: "", // no password set
 		DB:       0,  // use default DB
 	})
